@@ -1,0 +1,4 @@
+**/build
+tools
+**/*_firmware.uf2
+**/*_firmware.bin
