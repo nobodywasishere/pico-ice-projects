@@ -13,7 +13,7 @@ build_fpga:
 	ghdl -a --workdir=build --std=08 rtl/*
 
 	@# yosys synthesize
-	yosys -p 'ghdl --std=08 --workdir=build top; synth_ice40 -json build/top.json'
+	yosys -m ghdl -p 'ghdl --std=08 --workdir=build top; synth_ice40 -json build/top.json'
 
 	@# nextpnr route
 	nextpnr-ice40 --up5k --package sg48 --pcf cfg/pinout.pcf --json build/top.json --asc build/top.asc
